@@ -1,3 +1,11 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://yukemuli.dance"
+theme = "lanyon-hugo"
+languagecode = "ja-jp"
+defaultcontentlanguage = "ja"
+
+publishDir = "."
+paginate = 20
+
+[params]
+title = "YUKEMULI"
+tagLine = "= 風呂 × 音楽"
