@@ -6,6 +6,8 @@ defaultcontentlanguage = "ja"
 publishDir = "."
 paginate = 20
 
+buildFuture = true
+
 [params]
 title = "YUKEMULI"
 tagLine = "= 風呂 × 音楽"
