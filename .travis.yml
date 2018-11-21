@@ -6,9 +6,9 @@ script:
   - hugo
 after_success:
   # {{{ SSH Key の復帰
-  - openssl aes-256-cbc -K $encrypted_5de9e16c0b96_key -iv $encrypted_5de9e16c0b96_iv -in ./deploy/id_rsa.enc -out ~/.ssh/yukemuli/id_rsa -d
-  - chmod 600 ~/.ssh/yukemuli/id_rsa
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/yukemuli/id_rsa\n" >> ~/.ssh/config
+  - openssl aes-256-cbc -K $encrypted_5de9e16c0b96_key -iv $encrypted_5de9e16c0b96_iv -in ./deploy/id_rsa.enc -out ~/.ssh/deploy_rsa -d
+  - chmod 600 ~/.ssh/deploy_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/deploy_rsa\n" >> ~/.ssh/config
   # }}}
   # {{{ Git user の設定
   - git config --global user.email otiai10+ayanel-ci@gmail.com
