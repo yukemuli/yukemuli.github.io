@@ -1,5 +1,5 @@
 language: go
-if: branch = master
+if: branch = master  
 before_install:
   - go get -u -v github.com/gohugoio/hugo
 script:
@@ -19,5 +19,5 @@ after_success:
   - git checkout .
   - git checkout master
   - hugo
-  - git add . && git commit -m "Deploy!" && git push origin master
+  - ./deploy/should_deploy.sh && git add . && git commit -m "Deploy!" && git push origin master
   # }}}
