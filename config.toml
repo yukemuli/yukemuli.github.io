@@ -12,3 +12,5 @@ buildFuture = true
 title = "YUKEMULI"
 tagLine = "= 風呂 × 音楽"
 dateForm = "2006 / 01 / 02"
+favicon = "/img/favicon.png"
+custom_css = ["/css/main.css"]

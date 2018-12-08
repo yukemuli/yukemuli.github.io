@@ -1,0 +1,19 @@
+
+body {
+  font-family: Helvetica;
+}
+
+span.post-date.upcoming {
+  position: relative;
+}
+span.post-date.upcoming:after {
+  background-image: url("/img/favicon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-left: 0.4em;
+  display: inline-block;
+  vertical-align: text-top;
+}
