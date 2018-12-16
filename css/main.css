@@ -3,6 +3,7 @@ body {
   font-family: Helvetica;
 }
 
+/* とりあえずここにつらつら書くよ */
 span.post-date.upcoming {
   position: relative;
 }
@@ -16,4 +17,60 @@ span.post-date.upcoming:after {
   margin-left: 0.4em;
   display: inline-block;
   vertical-align: text-top;
+}
+div.container h2 {
+  border-bottom: 2px #1f1370 dotted;
+}
+img.calendar {
+  min-width: 18%;
+}
+div.r-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+div.r-2>div {
+  flex: 1;
+  min-width: 240px;
+}
+
+/* guests */
+div.guests h3 {
+  font-weight: bold;
+  font-size: 2em;
+}
+div.guests img {
+  max-height: 360px;
+  max-width: 88%;
+  display: inline;
+}
+a.twitter::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-image: url("/img/twitter.svg");
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* regulars */
+div.regulars h3 {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin: 0 8px 0 0;
+  border-top: 1px #1f1370 dotted;
+}
+div.regulars>div {
+  display: flex;
+  margin-bottom: 8px;
+}
+div.regulars>div>div {
+  flex: 1;
+}
+div.regulars>div>div:first-of-type {
+  flex: 2;
+}
+div.regulars blockquote {
+  margin-top: 0;
+  padding: 10px;
+  font-size: 0.8em;
 }
