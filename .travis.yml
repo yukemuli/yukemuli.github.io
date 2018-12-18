@@ -19,5 +19,5 @@ after_success:
   - git checkout .
   - git checkout master
   - hugo
-  - ./deploy/should_deploy.sh && git add . && git commit -m "Deploy!" && git push origin master
+  - ./deploy/should_deploy.sh && git add . && git commit -m "Deploy!" && git push origin master && ./scripts/slack.sh
   # }}}
