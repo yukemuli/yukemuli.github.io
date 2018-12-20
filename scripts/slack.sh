@@ -1,5 +1,8 @@
 #!/bin/sh
 
+git checkout master
+git pull origin master
+
 DATE=`date`
 LAST=`git log --author=ayanel-ci -1 --pretty='%H'`
 # PREFIX='*'
