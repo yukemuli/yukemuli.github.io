@@ -4,8 +4,8 @@ const release = {
     const shell = require("child_process");
     return {
       gather: () => {
-        const latestCommit = shell.execSync(`git log --author=ayanel-ci -2 --no-merges --pretty='%H'`).toString().trim().split("\n").pop();
-        const lines = shell.execSync(`git log --pretty="%s" "${latestCommit}..HEAD"`).toString().trim().split("\n");
+        const latestCommit = shell.execSync(`git log --author=ayanel-ci -2 --pretty='%H'`).toString().trim().split("\n").pop();
+        const lines = shell.execSync(`git log --no-merges --skip=1 --pretty="%s" "${latestCommit}..HEAD"`).toString().trim().split("\n");
         console.log("DEBUG:", lines);
         return lines.filter(line => !!line);
       },
