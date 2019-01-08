@@ -25,8 +25,7 @@ const announce = {
       post: (lines) => {
         const text = lines.map(line => `・ ${line}`).join("\n");
         return twitter.post("statuses/update", {
-          status: `Test\n${text}`,
-          hashtag: "酒は毒",
+          status: `ホームページ更新したから見て！\n${text}\nhttps://yukemuli.dance`,
         });
       },
     }
@@ -40,7 +39,7 @@ const announce = {
         const text = lines.map(line => `・ ${line}`).join("\n");
         return slack.chat.postMessage({
           channel: config ? config.channel : process.env.SLACK_CHANNEL,
-          text: `_${now}_\n\n${text}`,
+          text: `_${now}_\nホームページ更新したから見て！\n\n${text}\n\nhttps://yukemuli.dance`,
           mrkdwn: true,
         });
       },
