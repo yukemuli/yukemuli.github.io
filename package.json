@@ -1,0 +1,21 @@
+{
+  "name": "yukemuli",
+  "version": "1.0.0",
+  "scripts": {
+    "announce": "node ./deploy/announce.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukemuli/yukemuli.github.io.git"
+  },
+  "author": "otiai10",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/yukemuli/yukemuli.github.io/issues"
+  },
+  "homepage": "https://github.com/yukemuli/yukemuli.github.io#readme",
+  "dependencies": {
+    "@slack/client": "^4.8.0",
+    "twitter": "^1.7.1"
+  }
+}
