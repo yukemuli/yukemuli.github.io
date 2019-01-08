@@ -20,5 +20,5 @@ after_success:
   - git checkout .
   - git checkout master
   - hugo
-  - ./deploy/should_deploy.sh && git add . && git commit -m "Deploy!" && git push origin master && npm run announce
+  - ./deploy/should_deploy.sh && git add . && git commit --allow-empty -m "[BOT] Deploy!" && git push origin master && npm run announce
   # }}}
