@@ -8,9 +8,12 @@ paginate = 20
 
 buildFuture = true
 
+caption = "/img/cap-3.png"
+
 [params]
 title = "YUKEMULI"
 tagLine = "= 風呂 × 音楽"
 dateForm = "2006 / 01 / 02"
 favicon = "/img/favicon.png"
 custom_css = ["/css/main.css"]
+caption = "/img/cap-3.png"
