@@ -3,7 +3,6 @@
 # 開発
 
 ```sh
-% git submodule update --init
 % hugo serve
 ```
 
