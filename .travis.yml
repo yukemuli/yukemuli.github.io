@@ -1,8 +1,7 @@
 language: go
-if: branch = master
+if: branch = master  
 before_install:
-  # - go get -u -v github.com/gohugoio/hugo
-  - sudo apt-get install hugo
+  - go get -u -v github.com/gohugoio/hugo
   - sudo apt-get install -y nodejs npm && npm install
 script:
   - hugo
