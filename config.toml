@@ -3,7 +3,7 @@ theme = "lanyon-hugo"
 languagecode = "ja-jp"
 defaultcontentlanguage = "ja"
 
-publishDir = "docs"
+publishDir = "."
 paginate = 20
 
 buildFuture = true
