@@ -40,6 +40,10 @@
   </url>
   
   <url>
+    <loc>https://yukemuli.dance/maps/</loc>
+  </url>
+  
+  <url>
     <loc>https://yukemuli.dance/tags/</loc>
     <priority>0</priority>
   </url>
