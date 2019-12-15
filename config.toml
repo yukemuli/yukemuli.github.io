@@ -10,6 +10,8 @@ buildFuture = true
 
 caption = "/img/cap-3.png"
 
+googleAnalytics = "UA-154575175-1"
+
 [params]
 title = "YUKEMULI"
 tagLine = "= 風呂 × 音楽"
