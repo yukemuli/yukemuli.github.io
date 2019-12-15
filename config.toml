@@ -8,8 +8,6 @@ paginate = 20
 
 buildFuture = true
 
-caption = "/img/cap-3.png"
-
 googleAnalytics = "UA-154575175-1"
 
 [params]
@@ -18,4 +16,5 @@ tagLine = "= 風呂 × 音楽"
 dateForm = "2006 / 01 / 02"
 favicon = "/img/favicon.png"
 custom_css = ["/css/main.css"]
+# ここがog:imageになるよ
 caption = "/img/cap-3.png"
