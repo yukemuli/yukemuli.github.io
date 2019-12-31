@@ -51,6 +51,18 @@ a.twitter::after {
   display: inline-block;
   vertical-align: top;
 }
+a.mixcloud::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-image: url("/img/mixcloud.svg");
+  display: inline-block;
+  vertical-align: top;
+}
+div.guests blockquote {
+  margin-top: -1em;
+  font-size: 0.8em;
+}
 
 /* regulars */
 div.regulars h3 {
