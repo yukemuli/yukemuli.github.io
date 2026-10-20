@@ -5,10 +5,13 @@
 # 開発
 
 ```sh
-% python3 -m http.server 8000
+% pnpm install
+% pnpm start
 ```
 
-http://localhost:8000 を開く。
+http://localhost:5173 を開く。Vite の開発サーバで、CSS を変えるとリロードなしで反映、HTML を変えると自動リロードする。
+
+Vite はローカル開発サーバとしてだけ使っていて、ビルドはしない。本番は GitHub Pages がリポジトリをそのまま配信する。
 
 # 構成
 

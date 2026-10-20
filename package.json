@@ -1,0 +1,20 @@
+{
+  "name": "yukemuli",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite"
+  },
+  "author": "otiai10",
+  "license": "GPL-3.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.12.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
