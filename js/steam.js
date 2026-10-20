@@ -40,11 +40,9 @@
   // フィルタだけ先に外すと、まだ動いている文字 (料金の行など) が、ブラウザが
   // 途中で作った低解像度の絵のまま残り、一瞬もやっと戻ったように見えるため。
   var animations = hero.getAnimations ? hero.getAnimations({ subtree: true }) : [];
-  // 端末が重くて CSS アニメーションが少し遅れても追い越さないよう、200ms の余裕をとる
-  var BUFFER = 200;
   var duration = animations.reduce(function (end, a) {
     return Math.max(end, a.effect.getComputedTiming().endTime);
-  }, 0) + BUFFER;
+  }, 0) || 4000;
   var start = performance.now();
   var intro = true;
 
