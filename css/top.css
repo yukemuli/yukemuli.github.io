@@ -70,8 +70,9 @@ img {
   /* 和文フォントの縦書き用字形 (ハイフンが立つなど) を使わず、全部まとめて横に倒す */
   text-orientation: sideways;
 }
-/* 左の日付は下から上へ読む */
-.hero-date {
+/* 日付も時間も下から上へ読む (キービジュに合わせる) */
+.hero-date,
+.hero-time {
   transform: rotate(180deg);
 }
 
