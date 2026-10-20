@@ -3,234 +3,114 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YUKEMULI = 風呂 × 音楽</title>
-  <meta name="description" content="YUKEMULI = 風呂 × 音楽">
-  <meta property="og:title" content="YUKEMULI = 風呂 × 音楽">
-  <meta property="og:description" content="YUKEMULI = 風呂 × 音楽">
-  <meta property="og:image" content="https://yukemuli.dance/img/cap-4.png">
-  <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>YUKEMULI vol.5 = 音楽 × サウナ</title>
+  <meta name="description" content="YUKEMULI vol.5 / 2026.11.14 (土) 13:00-19:00 / TOTOKEN 日本橋・浜町">
+  <meta property="og:title" content="YUKEMULI vol.5 = 音楽 × サウナ">
+  <meta property="og:description" content="2026.11.14 (土) 13:00-19:00 / TOTOKEN 日本橋・浜町">
+  <meta property="og:image" content="https://yukemuli.dance/img/vol5/kv.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/top.css">
+  <script>
+    // 動きを減らす設定でなければ、キービジュの文字を湯けむりから凝集させる (js/steam.js)
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('steam');
+    }
+  </script>
   <link rel="icon" href="/img/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-144-precomposed.png">
 </head>
 <body>
 
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<svg class="filters" aria-hidden="true">
+  <filter id="steam-filter" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="2" seed="7" />
+    <feDisplacementMap in="SourceGraphic" scale="0" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
 
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <img src="/img/logo.png" alt="YUKEMULI">
-  </div>
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item active" href="/">Home</a>
-    <a class="sidebar-nav-item" href="/events/">Events</a>
-    <a class="sidebar-nav-item" href="/maps/">Maps</a>
-  </nav>
-  <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
-  </div>
-</div>
+<header class="hero">
+  <p class="hero-date">26.11.14</p>
 
-<div class="wrap">
-  <div class="masthead">
-    <div class="container">
-      <h3 class="masthead-title">
-        <a href="/" title="Home">YUKEMULI</a>
-        <small>= 風呂 × 音楽</small>
-      </h3>
-    </div>
+  <div class="hero-body">
+    <p class="hero-area"><span class="yu">湯</span>日本橋・浜町</p>
+    <p class="hero-tagline">音楽 × サウナ</p>
+    <h1 class="hero-title">YUKEMULI</h1>
+    <p class="hero-lineup">linda, Jam_boy, 涙崎, sukiamaki, otiai10 and tacop</p>
+    <p class="hero-venue">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      TOTOKEN
+    </p>
+    <p class="hero-fee">1drink + sauna fee (optional)</p>
   </div>
 
-  <div class="container content">
-    <div class="post">
-      <h1 class="post-title"><a href="/events/20200201-vol4/">vol.4</a></h1>
-      <span class="post-date upcoming">2020 / 02 / 01</span>
+  <p class="hero-time">13:00-19:00</p>
 
-      <p>
-        <a class="twitter-share-button" data-size="large"
-          href="https://twitter.com/intent/tweet?text=わいわい&hashtag=yukemuli&url=https%3A%2F%2Fyukemuli.dance%2Fevents%2F20200201-vol4%2F"></a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </p>
+  <a class="scroll" href="#vol5">SCROLL</a>
+</header>
 
-      <img src="/img/cap-4.png" alt="YUKEMULI vol.4">
+<main>
+  <section id="vol5">
+    <h2>VOL.5</h2>
 
-      <h2 id="時間">時間</h2>
+    <dl class="info">
+      <dt>日時</dt>
+      <dd>
+        <span class="big">2026.11.14 (土) 13:00 - 19:00</span>
+        <a target="_blank" href="https://www.google.com/calendar/event?action=TEMPLATE&amp;dates=20261114T130000%2F20261114T190000&amp;text=YUKEMULI%20vol.5&amp;location=TOTOKEN%2C%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%97%A5%E6%9C%AC%E6%A9%8B%E6%B5%9C%E7%94%BA3%E4%B8%81%E7%9B%AE9-7&amp;details=%E9%9F%B3%E6%A5%BD%20%C3%97%20%E3%82%B5%E3%82%A6%E3%83%8A%0Ahttps%3A%2F%2Fyukemuli.dance%2F">Googleカレンダーに追加</a>
+      </dd>
 
-      <div class="r-2">
-        <div>
-          <b>
-            <a target="_blank" href="https://www.google.com/calendar/event?action=TEMPLATE&dates=20200201T150000/20200201T200000&text=YUKEMULI vol.4&location=尾久ゆ〜ランド熊野前, 日本、〒116-0012 東京都荒川区東尾久５丁目２７−５&details=%E3%80%90%E5%8D%8A%E5%B9%B4%E3%81%AB%E4%B8%80%E5%BA%A6%E3%81%AE%E3%81%8A%E6%A5%BD%E3%81%97%E3%81%BF%E3%80%91%0A%23YUKEMULI%20%E5%86%AC%E3%81%AE%E9%99%A3%EF%BC%81%0A%0A%E9%8A%AD%E6%B9%AFDJ%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%80%81YUKEMULI%E3%80%82%0A%E4%BB%8A%E5%9B%9E%E3%82%82%E3%80%8C%E5%B0%BE%E4%B9%85%E3%82%86%E3%80%9C%E3%83%A9%E3%83%B3%E3%83%89%E3%80%8D%E3%82%92%E3%81%8A%E5%80%9F%E3%82%8A%E3%81%97%E3%81%A6%E9%96%8B%E5%82%AC%E8%87%B4%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81%0A(link%3A%20https%3A%2F%2Ftokyosento.com%2Fcolumn%2F21371%2F)%20tokyosento.com%2Fcolumn%2F21371%2F%0A%0A%E7%9A%86%E6%A7%98%E3%81%AE%E3%81%94%E6%9D%A5%E5%A0%B4%E3%80%81%E5%BF%83%E3%82%88%E3%82%8A%E3%81%8A%E5%BE%85%E3%81%A1%E7%94%B3%E3%81%97%E4%B8%8A%E3%81%92%E3%81%BE%E3%81%99%EF%BC%81%0A%0A%E6%97%A5%E6%99%82%3A2%2F1(%E5%9C%9F)15%3A00-%0A%E5%A0%B4%E6%89%80%3A%E5%B0%BE%E4%B9%85%E3%82%86%E3%80%9C%E3%83%A9%E3%83%B3%E3%83%89%0A%E6%96%99%E9%87%91%3A%E5%85%A5%E6%B9%AF%E6%96%99(%C2%A5470~)%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fhashtag%2FYUKEMULI%3Fsrc%3Dhashtag_click%26f%3Dlive">
-              2020 / 02 / 01 / 15:00 ~ 20:00 <img class="calendar" src="https://www.google.com/calendar/images/ext/gc_button1_ja.gif" alt="Googleカレンダーに追加">
-            </a>
-          </b>
-        </div>
-        <div>
-          ※ 『尾久ゆ〜らんど』は15:00~26:00まで営業
-        </div>
-      </div>
+      <dt>場所</dt>
+      <dd>
+        <span class="big"><a href="https://totoken.jp" target="_blank">TOTOKEN</a></span>
+        東京都中央区日本橋浜町3丁目9-7
+        <span class="note">水天宮前駅 徒歩5分 / 浜町駅 徒歩8分 / 人形町駅 徒歩10分</span>
+      </dd>
 
-      <h2 id="場所">場所</h2>
+      <dt>料金</dt>
+      <dd>1ドリンク ＋ サウナ利用料（任意）</dd>
 
-      <div class="r-2">
-        <div>
-          <div style="padding-right: 8px">
-            <b>尾久ゆ〜ランド</b> <a href="https://www.facebook.com/%E5%B0%BE%E4%B9%85%E3%82%86%E3%83%A9%E3%83%B3%E3%83%89%E7%86%8A%E9%87%8E%E5%89%8D-490350624341150/">Facebook</a><br>
-            <a href="https://tokyosento.com/archive/arakawa-ku/15901/">https://tokyosento.com/archive/arakawa-ku/15901/</a>
-            <p>
-              ※ 日暮里舎人ライナー「赤土小学校前」から徒歩5分。<br>
-              ※ 都電荒川線「熊野前」駅から徒歩10分。
-            </p>
-          </div>
-        </div>
-        <div>
-          <iframe allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6476.453753501523!2d139.767147!3d35.745228!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdce36828aaafd82!2z5bC-5LmF44KG44Cc44Op44Oz44OJ54aK6YeO5YmN!5e0!3m2!1sja!2sjp!4v1559656952097!5m2!1sja!2sjp"></iframe>
-        </div>
-      </div>
+      <dt>出演</dt>
+      <dd>
+        <ul class="lineup">
+          <li>linda</li>
+          <li>Jam_boy</li>
+          <li>涙崎</li>
+          <li>sukiamaki</li>
+          <li>otiai10</li>
+          <li>tacop</li>
+        </ul>
+      </dd>
+    </dl>
 
-      <h2 id="エントランス">エントランス</h2>
+    <iframe class="map" loading="lazy" title="TOTOKEN の地図"
+      src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%97%A5%E6%9C%AC%E6%A9%8B%E6%B5%9C%E7%94%BA3%E4%B8%81%E7%9B%AE9-7&amp;z=16&amp;hl=ja&amp;output=embed"></iframe>
 
-      <p><strong>470円（ふつうの銭湯）</strong></p>
-
-      <p>【入場時のお願い】</p>
-      <ul>
-        <li>入場時、銭湯の入場チケットを券売機にてご購入ください</li>
-        <li>YUKEMULI受付にチケットをお渡しください。リストバンドと交換いたします。入浴のみは1本、サウナ付きは2本です。貸しタオル等は番台で受け取ってください。</li>
-      </ul>
-
-      <p>【お風呂に入るとき】</p>
-      <ul>
-        <li>お風呂に入る直前に番台でリストバンドを見せてください。お風呂のロッカーの鍵（サウナ付の方は合わせてサウナの鍵も）が番台の方から渡されますので、そちらでロッカーを使用しお風呂に入ってください。</li>
-        <li>お風呂から上がったら荷物をロッカーから出し、鍵を番台に返してください。もう一度入るときはまた番台でリストバンドを見せ、ロッカーの鍵を受け取り、お風呂へ入ってください。</li>
-      </ul>
-
-      <p>【その他注意事項】</p>
-      <ul class="smaller">
-        <li>銭湯からの入退場は自由です。再入場時には初回入場時にお渡ししたリストバンドが必要です。入退場の際には、YUKEMULI受付にお声掛けください。</li>
-        <li>飲食物の持ち込みは自由です。が、お酒やソフトドリンクは極力会場内での購入をお願いいたします。持ち込まれた飲食物のゴミにつきましては、必ず各自でお持ち帰りください。(商店街にはおでん屋さんやお肉屋さんなど楽しいお店がたくさんありますので、ぜひご活用ください。)</li>
-        <li>サウナ、タオル、石鹸類は別料金。もちろん銭湯なので、自分の銭湯セット持ってきてもいいです。</li>
-        <li>一般のお客様もいるから場所は譲り合って。そして、オトナな楽しみかたをしましょう。モッシュとかはできません。</li>
-        <li>DJブースやスピーカーの近くに飲み物を置かない。</li>
-        <li>貴重品や手荷物の管理は各自でお願いいたします。盗難等の損害につきましては、イベントスタッフ側での保証や対応は致しかねます。</li>
-        <li>施設内は全面禁煙です。喫煙については会場の外にてお願いいたします</li>
-      </ul>
-
-      <h2 id="ゲスト">ゲスト</h2>
-
-      <div class="guests" id="guests">
-        <div>
-          <h3>
-            Tacumille
-            <a class="mixcloud" href="https://www.mixcloud.com/Tacumille/"></a>
-          </h3>
-          <blockquote>渋谷円山どらむん横丁 / 箱庭 / VOCALOID-Infinity∞</blockquote>
-          <div>
-            <div>
-              <img src="/img/tacumille.jpg" alt="Tacumille">
-            </div>
-            <div>
-              <p>
-                2013年10月25日よりDJ活動を開始。<br>
-                DnB、2step/UKG、HIPHOP、2000年代ロキノン系 etc…
-                なんでも掛けたがる"とっ散らかしスタイル"でまぐれヒットを連発。
-                好きなお姉さんは黒タイツお姉さん。好きなデニールは80デニール。
-                でも、今日ばかしは黒タイツを脱いでお湯を楽しんでね。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 id="タイムテーブル">タイムテーブル</h2>
-
-      <table class="center">
-        <tbody>
-          <tr><td>15:00 〜</td><td>スキアマキ</td></tr>
-          <tr><td>15:50 〜</td><td>tacop</td></tr>
-          <tr><td>16:40 〜</td><td>涙崎</td></tr>
-          <tr><td>17:30 〜</td><td>Jam_boy</td></tr>
-          <tr><td>18:20 〜</td><td><strong>Tacumille</strong></td></tr>
-          <tr><td>19:10 〜</td><td>linda</td></tr>
-        </tbody>
-      </table>
-
-      <h2 id="人">人</h2>
-
-      <div class="regulars">
-        <div>
-          <div>
-            <h3 id="tacop">tacop</h3>
-            <blockquote>Houseを中心とした4つ打ちの楽曲を、バンドやミュージカルで培った表現力を生かし、体全体を使って魅力溢れるプレイをする。 プレイ中だけでなく、フロアでも現場を盛り上げるバイブス野郎。ヘルニア国物語。</blockquote>
-          </div>
-          <div><img src="/img/prof/tacop.jpg" alt="tacop"></div>
-        </div>
-        <div>
-          <div>
-            <h3 id="jam_boy">Jam_boy</h3>
-            <blockquote>
-              つまみの角度は1時位で、ジワジワ温めるのが好きです。<br>
-              混ぜるタイミングは、その場の雰囲気。<br>
-              瀬戸際を狙うと旨味が良く出ます。<br>
-              焦げるか焦げないかの。<br>
-              最近、香辛料も揃えたので新しいジャンルにも挑戦中です。<br><br>
-              あ、インドカレーの話です。
-            </blockquote>
-          </div>
-          <div><img src="/img/prof/jamboy.jpg" alt="Jam_boy"></div>
-        </div>
-        <div>
-          <div>
-            <h3 id="ruisaki">涙崎</h3>
-            <blockquote>陰キャポケモン。音楽に合わせて踊ろうとするものの運動音痴のため決してダンスではないよく分からない奇妙なステップを踏む習性がある。VOCALOID・UTAUや一部のロックバンドを聴く。</blockquote>
-          </div>
-          <div><img src="/img/prof/ruisaki.jpg" alt="涙崎"></div>
-        </div>
-        <div>
-          <div>
-            <h3 id="linda">linda</h3>
-            <blockquote>関係性と感情のオタク。それらにまつわるパーティーに出没したり、パーティーを自ら主催したりしている。エモでチルな選曲に定評がある。</blockquote>
-          </div>
-          <div><img src="/img/prof/linda.jpg" alt="linda"></div>
-        </div>
-        <div>
-          <div>
-            <h3 id="sukiamaki">スキアマキ</h3>
-            <blockquote>VJもできるスーパーガール。クラブで生ハムを食べる様子も観察される。最近は専らたけのこのことについて考えています。</blockquote>
-          </div>
-          <div><img src="/img/prof/sukiamaki.jpg" alt="スキアマキ"></div>
-        </div>
-        <div>
-          <div>
-            <h3 id="otiai10">otiai10</h3>
-            <blockquote>公共の場なので「エロリツイート先生」を封印しています。おもに裏方。</blockquote>
-          </div>
-          <div><img src="/img/prof/otiai.jpg" alt="otiai10"></div>
-        </div>
-      </div>
+    <div class="buttons">
+      <a class="button" href="/events/20261114-vol5/">vol.5 の詳細</a>
+      <a class="button" href="https://twitter.com/intent/tweet?hashtags=yukemuli&amp;url=https%3A%2F%2Fyukemuli.dance%2F" target="_blank">X でシェア</a>
     </div>
+  </section>
 
-    <div class="post">
-      <h1 class="post-title"><a href="/events/20190803-vol3/">vol.3</a></h1>
-      <span class="post-date">2019 / 08 / 03</span>
-      <a href="/events/20190803-vol3/"><img src="/img/cap-3.png" alt="YUKEMULI vol.3"></a>
-    </div>
+  <section>
+    <h2>ARCHIVE</h2>
+    <ul class="archive">
+      <li><a href="/events/20200201-vol4/"><img src="/img/cap-4.png" alt="YUKEMULI vol.4" loading="lazy"><span>vol.4 — 2020.02.01 尾久ゆ〜ランド</span></a></li>
+      <li><a href="/events/20190803-vol3/"><img src="/img/cap-3.png" alt="YUKEMULI vol.3" loading="lazy"><span>vol.3 — 2019.08.03 尾久ゆ〜ランド</span></a></li>
+      <li><a href="/events/20190119-vol2/"><img src="/img/cap-2.jpg" alt="YUKEMULI vol.2" loading="lazy"><span>vol.2 — 2019.01.19 ラクスパ鶴見</span></a></li>
+      <li><a href="/events/20180714-vol1/"><img src="/img/cap-1.jpg" alt="YUKEMULI vol.1" loading="lazy"><span>vol.1 — 2018.07.14 ラクスパ鶴見</span></a></li>
+    </ul>
+  </section>
+</main>
 
-    <div class="post">
-      <h1 class="post-title"><a href="/events/20190119-vol2/">vol.2</a></h1>
-      <span class="post-date">2019 / 01 / 19</span>
-      <a href="/events/20190119-vol2/"><img src="/img/cap-2.jpg" alt="YUKEMULI vol.2"></a>
-    </div>
+<footer>
+  <p><a href="/events/">Events</a></p>
+  <p>&copy; 2018-2026 YUKEMULI</p>
+</footer>
 
-    <div class="post">
-      <h1 class="post-title"><a href="/events/20180714-vol1/">vol.1</a></h1>
-      <span class="post-date">2018 / 07 / 14</span>
-      <a href="/events/20180714-vol1/"><img src="/img/cap-1.jpg" alt="YUKEMULI vol.1"></a>
-    </div>
-  </div>
-</div>
-
-<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+<script src="/js/steam.js"></script>
 
 </body>
 </html>

@@ -188,17 +188,6 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 1rem;
   color: #9a9a9a;
 }
-.post-date.upcoming:after {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.4em;
-  vertical-align: text-top;
-  background-image: url("/img/favicon.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 /*
  * サイドバー
@@ -413,4 +402,16 @@ a.mixcloud::after {
   margin-top: 0;
   padding: 10px;
   font-size: 0.8em;
+}
+
+/* 控えめ版 (vol.5〜) */
+.regulars.quiet h3 {
+  font-size: 1.2em;
+}
+.regulars.quiet img {
+  max-width: 120px;
+  margin-left: auto;
+}
+.regulars.quiet blockquote {
+  font-size: 0.75em;
 }

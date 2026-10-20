@@ -1,0 +1,363 @@
+/*
+ * トップページ専用。vol.5 のキービジュアル (img/vol5/kv.jpg) に寄せている。
+ * ほかのページは css/style.css。
+ */
+
+:root {
+  --night: #141a23;
+  --night-2: #1c2531;
+  --line: rgba(255, 255, 255, .16);
+  --text: #f4f1ec;
+  --muted: rgba(244, 241, 236, .64);
+  --sunset: #f0a65a;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--night);
+}
+a {
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ヒーロー */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 6vh 6vw;
+  background: var(--night) url("/img/vol5/hero.jpg") 25% center / cover no-repeat;
+  overflow: hidden;
+}
+.hero::after {
+  /* 下端を本文の背景色になじませる */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 18vh;
+  background: linear-gradient(to bottom, transparent, var(--night));
+  pointer-events: none;
+}
+
+.hero-date,
+.hero-time {
+  margin: 0;
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  /* 和文フォントの縦書き用字形 (ハイフンが立つなど) を使わず、全部まとめて横に倒す */
+  text-orientation: sideways;
+}
+/* 左の日付は下から上へ読む */
+.hero-date {
+  transform: rotate(180deg);
+}
+
+.hero-body {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+}
+.hero-area {
+  display: flex;
+  align-items: center;
+  gap: .6em;
+  margin: 0 0 3em;
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+}
+.yu {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  border: 1px solid currentColor;
+  line-height: 1;
+}
+.hero-tagline {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+}
+.hero-title {
+  margin: 0 0 .25em;
+  font-size: clamp(3.4rem, 10vw, 9rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: .02em;
+}
+.hero-lineup,
+.hero-venue,
+.hero-fee {
+  margin: 0;
+  font-size: clamp(.95rem, 1.6vw, 1.4rem);
+  line-height: 1.6;
+}
+.hero-venue {
+  display: flex;
+  align-items: center;
+  gap: .25em;
+}
+.hero-venue svg {
+  width: .9em;
+  height: .9em;
+  fill: currentColor;
+}
+
+.scroll {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 3vh;
+  transform: translateX(-50%);
+  font-size: .75rem;
+  letter-spacing: .3em;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/*
+ * 湯けむりから凝集するエフェクト (初回ロード時のみ)
+ * html.steam は index.html の <head> で付ける。動かすのは js/steam.js。
+ */
+
+.filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.steaming .hero-date,
+.steaming .hero-body,
+.steaming .hero-time {
+  filter: url("#steam-filter");
+}
+
+@keyframes condense {
+  from {
+    opacity: 0;
+    filter: blur(18px);
+    translate: var(--x, 0) .6em;
+    scale: 1.12;
+  }
+  60% {
+    opacity: .9;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    translate: 0 0;
+    scale: 1;
+  }
+}
+.steam .hero-date,
+.steam .hero-area,
+.steam .hero-tagline,
+.steam .hero-title span,
+.steam .hero-lineup,
+.steam .hero-venue,
+.steam .hero-fee,
+.steam .hero-time,
+.steam .scroll {
+  animation: condense 2.4s cubic-bezier(.2, .6, .2, 1) var(--d, 0s) both;
+}
+.steam .hero-title span {
+  display: inline-block;
+}
+/* 1文字ずつに割るまでは見せない */
+.steam .hero-title:not(.split) {
+  opacity: 0;
+}
+.steam .hero-area    { --d: .2s; }
+.steam .hero-tagline { --d: .5s; }
+.steam .hero-date    { --d: 1.2s; }
+.steam .hero-time    { --d: 1.5s; }
+.steam .hero-lineup  { --d: 1.8s; }
+.steam .hero-venue   { --d: 2.0s; }
+.steam .hero-fee     { --d: 2.2s; }
+.steam .scroll       { --d: 3.2s; }
+
+/* 狭い画面では縦書きをやめて上下に積む */
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2.5rem;
+    padding: 12vh 24px 14vh;
+  }
+  .hero-date,
+  .hero-time {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 2.6rem;
+  }
+  .hero-body {
+    justify-self: start;
+  }
+  .hero-area {
+    margin-bottom: 1.5em;
+  }
+}
+
+/* 本文 */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section {
+  padding: 72px 0;
+  border-top: 1px solid var(--line);
+}
+section:first-child {
+  border-top: 0;
+}
+h2 {
+  margin: 0 0 32px;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .3em;
+  color: var(--sunset);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  gap: 20px 24px;
+  margin: 0 0 40px;
+}
+.info dt {
+  color: var(--muted);
+}
+.info dd {
+  margin: 0;
+}
+.info .big {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.info .note {
+  display: block;
+  font-size: .875rem;
+  color: var(--muted);
+}
+.info a {
+  text-decoration-color: var(--sunset);
+  text-underline-offset: .2em;
+}
+@media (max-width: 520px) {
+  .info {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .info dd {
+    margin-bottom: 20px;
+  }
+}
+
+.lineup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lineup li {
+  padding: 2px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.map {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 6px;
+  filter: grayscale(.4) brightness(.9);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.button {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.button:hover,
+.button:focus {
+  background: var(--text);
+  color: var(--night);
+}
+
+/* これまでの YUKEMULI */
+
+.archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.archive a {
+  display: block;
+  text-decoration: none;
+}
+.archive img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  opacity: .85;
+  transition: opacity .2s;
+}
+.archive a:hover img,
+.archive a:focus img {
+  opacity: 1;
+}
+.archive span {
+  display: block;
+  margin-top: 8px;
+  font-size: .875rem;
+  color: var(--muted);
+}
+
+footer {
+  padding: 40px 24px 56px;
+  border-top: 1px solid var(--line);
+  font-size: .8rem;
+  color: var(--muted);
+  text-align: center;
+}
+footer a {
+  margin: 0 .5em;
+}
