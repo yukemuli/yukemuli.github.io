@@ -297,7 +297,6 @@ h2 {
   height: 320px;
   border: 0;
   border-radius: 6px;
-  filter: grayscale(.4) brightness(.9);
 }
 
 .buttons {
