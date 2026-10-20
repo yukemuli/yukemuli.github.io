@@ -195,7 +195,7 @@ img {
 .steam .hero-lineup  { --d: 1.8s; }
 .steam .hero-venue   { --d: 2.0s; }
 .steam .hero-fee     { --d: 2.2s; }
-.steam .scroll       { --d: 3.2s; }
+.steam .scroll       { --d: 2.2s; }
 
 /* 狭い画面では縦書きをやめて上下に積む */
 @media (max-width: 720px) {

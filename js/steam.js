@@ -35,20 +35,32 @@
   });
   title.classList.add('split');
 
-  // ゆらぎを強い状態から 0 へ
-  var duration = 4000;
+  // いちばん最後に凝集しおわる文字の時刻。ゆらぎ (SVG フィルタ) はここまで続け、
+  // ここで全部まとめて素の状態に戻す。
+  // フィルタだけ先に外すと、まだ動いている文字 (料金の行など) が、ブラウザが
+  // 途中で作った低解像度の絵のまま残り、一瞬もやっと戻ったように見えるため。
+  var animations = hero.getAnimations ? hero.getAnimations({ subtree: true }) : [];
+  // 端末が重くて CSS アニメーションが少し遅れても追い越さないよう、200ms の余裕をとる
+  var BUFFER = 200;
+  var duration = animations.reduce(function (end, a) {
+    return Math.max(end, a.effect.getComputedTiming().endTime);
+  }, 0) + BUFFER;
   var start = performance.now();
   var intro = true;
 
   function tick(now) {
     if (!intro) return;
     var t = Math.min((now - start) / duration, 1);
-    setSteam(Math.pow(1 - t, 3));
-    if (t < 1) requestAnimationFrame(tick);
+    if (t < 1) {
+      setSteam(Math.pow(1 - t, 3));
+      requestAnimationFrame(tick);
+    } else {
+      finish();
+    }
   }
   requestAnimationFrame(tick);
 
-  // 全部の動きが終わったら、エフェクト用のクラス・フィルタ・分割をすべて外して
+  // エフェクト用のクラス・フィルタ・分割を、同じタイミングですべて外して
   // 素の HTML/CSS の状態に戻す。アニメーションが終わった後も blur(0) や scale が
   // 残っていると、ブラウザによっては文字がにじむため。
   function finish() {
@@ -63,12 +75,8 @@
     update();
   }
 
-  var animations = hero.getAnimations ? hero.getAnimations({ subtree: true }) : [];
-  if (animations.length > 0) {
-    Promise.all(animations.map(function (a) { return a.finished; })).then(finish, finish);
-  }
-  // タブが裏にあって rAF やアニメーションが止まっていても、必ず元に戻す
-  setTimeout(finish, 7000);
+  // タブが裏にあって rAF が止まっていても、必ず元に戻す
+  setTimeout(finish, duration + 1000);
 
   // ---- 2. スクロール: 散っていく ----
 
