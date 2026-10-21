@@ -45,8 +45,23 @@ img {
   min-height: 100vh;
   min-height: 100svh;
   padding: 6vh 6vw;
-  background: var(--night) url("/img/vol5/hero.jpg") 25% center / cover no-repeat;
   overflow: hidden;
+}
+/*
+ * 写真は画面に固定して、本文がその上をせり上がってくるようにする。
+ * iOS Safari は background-attachment: fixed が効かないので、固定した疑似要素に敷く。
+ * 高さを 100lvh にしておくと、アドレスバーの出し入れで写真が伸び縮みしない。
+ */
+.hero::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100lvh;
+  z-index: -1;
+  background: var(--night) url("/img/vol5/hero.jpg") 25% center / cover no-repeat;
 }
 .hero::after {
   /* 下端を本文の背景色になじませる */
@@ -221,10 +236,10 @@ img {
 
 /* 本文 */
 
+/* 写真の上に重なるので、背景を画面幅いっぱいに塗る (中身の幅は 960px のまま) */
 main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 max(24px, calc((100% - 912px) / 2));
+  background: var(--night);
 }
 section {
   padding: 72px 0;
@@ -357,6 +372,7 @@ footer {
   font-size: .8rem;
   color: var(--muted);
   text-align: center;
+  background: var(--night);
 }
 footer a {
   margin: 0 .5em;
