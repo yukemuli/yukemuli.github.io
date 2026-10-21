@@ -1,8 +1,18 @@
 /*
  * YUKEMULI
- * もとは Hugo の lanyon テーマ (poole.css / lanyon.css) + main.css。
- * 使っているところだけ残してひとつにまとめた。
+ * トップ以外のページ (イベント・一覧・404 など)。
+ * もとは Hugo の lanyon テーマだったが、トップ (css/top.css) の夜の配色に寄せて作り直した。
  */
+
+:root {
+  /* css/top.css と同じ値 */
+  --night: #141a23;
+  --night-2: #1c2531;
+  --line: rgba(255, 255, 255, .16);
+  --text: #f4f1ec;
+  --muted: rgba(244, 241, 236, .64);
+  --sunset: #f0a65a;
+}
 
 /* ベース */
 
@@ -17,27 +27,28 @@ body {
 }
 html {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 @media (min-width: 38em) {
   html {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 body {
-  font-family: Helvetica;
-  color: #515151;
-  background-color: #fff;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--text);
+  background-color: var(--night);
   -webkit-text-size-adjust: 100%;
 }
 
 a {
-  color: #268bd2;
+  color: var(--sunset);
   text-decoration: none;
 }
 a:hover,
 a:focus {
   text-decoration: underline;
+  text-underline-offset: .2em;
 }
 a strong {
   color: inherit;
@@ -45,19 +56,22 @@ a strong {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.25;
-  color: #313131;
-  letter-spacing: -.025rem;
-  text-rendering: optimizeLegibility;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
 }
 h1 {
   font-size: 2rem;
+  letter-spacing: .02em;
 }
+/* 見出しはトップの h2 と同じく、小さく字間を空けて夕焼け色 */
 h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  margin: 3.5rem 0 1.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  font-size: .8rem;
+  letter-spacing: .3em;
+  color: var(--sunset);
 }
 h3 {
   margin-top: 1.5rem;
@@ -69,7 +83,7 @@ p {
   margin-bottom: 1rem;
 }
 strong {
-  color: #303030;
+  color: var(--text);
 }
 ul, ol {
   margin-top: 0;
@@ -79,243 +93,112 @@ ul, ol {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  color: var(--muted);
+  border-left: 2px solid var(--line);
 }
 blockquote p:last-child {
   margin-bottom: 0;
-}
-@media (min-width: 30em) {
-  blockquote {
-    padding-right: 5rem;
-    padding-left: 1.25rem;
-  }
 }
 
 img {
   display: block;
   max-width: 100%;
   margin: 0 0 1rem;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--line);
   border-collapse: collapse;
 }
 td,
 th {
   padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--line);
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: var(--night-2);
 }
 
 /* レイアウト */
 
-.wrap {
-  position: relative;
-  width: 100%;
-}
-
 .container {
-  max-width: 28rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 760px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
 }
-@media (min-width: 38em) {
-  .container {
-    max-width: 32rem;
-  }
-}
-@media (min-width: 56em) {
-  .container {
-    max-width: 38rem;
-  }
-}
 
+/* ヘッダー: 左にサイト名、右にリンク */
 .masthead {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--line);
 }
 .masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #505050;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--text);
 }
-.masthead-title a {
-  color: #505050;
+.masthead-nav {
+  display: flex;
+  gap: 1.75em;
 }
-.masthead-title small {
-  font-size: 75%;
-  font-weight: 400;
-  color: #c0c0c0;
-  letter-spacing: 0;
+.masthead-nav a {
+  font-size: .75rem;
+  letter-spacing: .2em;
+  color: var(--muted);
 }
-@media (max-width: 48em) {
-  .masthead-title {
-    text-align: center;
-  }
-  .masthead-title small {
-    display: none;
-  }
+.masthead-nav a:hover,
+.masthead-nav a:focus,
+.masthead-nav a[aria-current] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--sunset);
+  text-underline-offset: .5em;
+}
+.masthead-title:hover,
+.masthead-title:focus {
+  text-decoration: none;
 }
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
 }
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
-}
-.page-title,
-.post-title {
   margin-top: 0;
+  color: var(--text);
 }
 .post-date {
   display: block;
-  margin-top: -.5rem;
-  margin-bottom: 1rem;
-  color: #9a9a9a;
+  margin-top: -.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
 }
 
-/*
- * サイドバー
- * チェックボックスの :checked でひらく。
- * HTML は input → .sidebar → .wrap → label の順に並べること。
- */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: -14rem;
-  width: 14rem;
-  visibility: hidden;
-  overflow-y: auto;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-size: .875rem;
-  color: rgba(255, 255, 255, .6);
-  background-color: #202020;
-  transition: all .3s ease-in-out;
-}
-@media (min-width: 30em) {
-  .sidebar {
-    font-size: .75rem;
-  }
-}
-.sidebar a {
-  font-weight: normal;
-  color: #fff;
-}
-.sidebar-item {
-  padding: 1rem;
-}
-.sidebar-item p:last-child {
-  margin-bottom: 0;
-}
-.sidebar-nav {
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
-}
-.sidebar-nav-item {
-  display: block;
-  padding: .5rem 1rem;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-}
-.sidebar-nav-item.active,
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: transparent;
-}
-@media (min-width: 48em) {
-  .sidebar-item {
-    padding: 1.5rem;
-  }
-  .sidebar-nav-item {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-.sidebar-checkbox {
-  position: absolute;
-  opacity: 0;
-  user-select: none;
-}
-.sidebar-toggle {
-  position: absolute;
-  top: .8rem;
-  left: 1rem;
-  display: block;
-  padding: .25rem .75rem;
-  color: #505050;
-  background-color: #fff;
-  border-radius: .25rem;
-  cursor: pointer;
-}
-.sidebar-toggle:before {
-  display: inline-block;
-  width: 1rem;
-  height: .75rem;
-  content: "";
-  background-image: linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
-}
-.sidebar-toggle:active,
-#sidebar-checkbox:checked ~ .sidebar-toggle {
-  color: #fff;
-  background-color: #555;
-}
-.sidebar-toggle:active:before,
-#sidebar-checkbox:checked ~ .sidebar-toggle:before {
-  background-image: linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-}
-@media (min-width: 30.1em) {
-  .sidebar-toggle {
-    position: fixed;
-  }
-}
-@media print {
-  .sidebar-toggle {
-    display: none;
-  }
-}
-
-.wrap,
-.sidebar,
-.sidebar-toggle {
-  backface-visibility: hidden;
-}
-.wrap,
-.sidebar-toggle {
-  transition: transform .3s ease-in-out;
-}
-#sidebar-checkbox:checked + .sidebar {
-  z-index: 10;
-  visibility: visible;
-}
-#sidebar-checkbox:checked ~ .sidebar,
-#sidebar-checkbox:checked ~ .wrap,
-#sidebar-checkbox:checked ~ .sidebar-toggle {
-  transform: translateX(14rem);
+footer {
+  margin-top: 2rem;
+  padding: 40px 24px 56px;
+  border-top: 1px solid var(--line);
+  font-size: .8rem;
+  color: var(--muted);
+  text-align: center;
 }
 
 /* イベントページ */
 
-.container h2 {
-  border-bottom: 2px #1f1370 dotted;
-}
 .small {
   font-size: 0.8em;
 }
@@ -330,17 +213,19 @@ a.sidebar-nav-item:focus {
 }
 .netprint-code {
   font-weight: bold;
-  color: #0000ff;
+  color: var(--sunset);
 }
 
 img.calendar {
   min-width: 18%;
+  margin-top: .5rem;
 }
 
 /* 2カラム (狭いと縦に並ぶ) */
 .r-2 {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
 }
 .r-2 > div {
   flex: 1;
@@ -350,6 +235,7 @@ img.calendar {
   width: 100%;
   height: 280px;
   border: 0;
+  border-radius: 6px;
 }
 
 /* ゲスト */
@@ -379,6 +265,8 @@ a.twitter::after {
 }
 a.mixcloud::after {
   background-image: url("/img/mixcloud.svg");
+  /* ロゴが黒いので、夜の背景では白く抜く */
+  filter: invert(1);
 }
 
 /* いつものひとたち */
@@ -386,7 +274,8 @@ a.mixcloud::after {
   font-weight: bold;
   font-size: 1.8em;
   margin: 0 8px 0 0;
-  border-top: 1px #1f1370 dotted;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
 }
 .regulars > div {
   display: flex;
