@@ -94,8 +94,8 @@
 
   function update() {
     if (intro) return;
-    // ヒーローの高さの 7 割スクロールしたところで、ぜんぶ散りきる
-    var p = clamp(window.scrollY / (hero.offsetHeight * 0.7));
+    // ヒーローの高さの 45% スクロールしたところで、ぜんぶ散りきる
+    var p = clamp(window.scrollY / (hero.offsetHeight * 0.45));
 
     layers.forEach(function (el, i) {
       var q = clamp((p - i * STAGGER) / SPAN);
@@ -108,7 +108,7 @@
         if (!el.getAttribute('style')) el.removeAttribute('style');
         return;
       }
-      var e = q * q; // はじめはゆっくり、だんだん速く散る
+      var e = Math.pow(q, 1.5); // はじめはゆっくり、だんだん速く散る
       el.style.opacity = (1 - e).toFixed(3);
       el.style.filter = 'blur(' + (e * 18).toFixed(1) + 'px)';
       el.style.translate = '0 ' + (-e * 1.2).toFixed(3) + 'em';
